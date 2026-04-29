@@ -1,7 +1,6 @@
 ---
 import "@fontsource-variable/lilex/wght.css";
 import "../styles/global.css";
-import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -15,10 +14,7 @@ import Header from "../components/Header.astro";
 		<title>Nguyen</title>
 	</head>
 	<body>
-		<main class="w-full max-w-6xl mx-auto p-5 flex flex-col gap-4">
-			<Header />
-			<slot />
-		</main>
+		<slot />
 	</body>
 </html>
 

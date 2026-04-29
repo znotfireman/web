@@ -1,55 +1,63 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import { Image } from "astro:assets";
+import LandingLink from "../layouts/LandingLink.astro";
 import Layout from "../layouts/Layout.astro";
 import FullBody from "../assets/fullbody.png";
-import { getCollection } from "astro:content";
-import WorkCard from "../components/WorkCard.astro";
-import { Image } from "astro:assets";
-
-const allWorks = (await getCollection("works")).sort((a, b) =>
-	a.data.title.localeCompare(b.data.title),
-);
 ---
 
 <Layout>
-	<article class="relative pt-4">
-		<img
-			src={FullBody.src}
-			alt="Avatar of godmothersfire on Roblox, depicts a floating woman with trailing crimson hair."
-			class="fullbody w-full lg:max-w-3xl h-full lg:float-right lg:pl-8 relative"
-		/>
-		<h1 class="text-4xl pb-4 font-display font-bold lg:mt-0 mt-4">
-			Full-Stack<br />Game Developer
-		</h1>
-		<p class="lg:max-w-[60ch]">
-			For over 6 years, I scripted, built maps, and developed many Roblox
-			games. I also work across frontend to backend, for competitive
-			robotics to open source libraries.
-			<br />
-			<br />
-			I love leaving players amazed with the attention to details that make
-			worlds feel alive. To date, my work has been enjoyed by thousands of players
-			worldwide.
-		</p>
-		<div>
-			<h2 class="pt-8 subtitle">Technologies I Use</h2>
+	<div
+		class="w-full h-full overflow-hidden flex items-center justify-center gap-4"
+	>
+		<div class="grid grid-cols-4 h-full gap-2">
+			<!-- An IQ Too High? -->
+			<LandingLink subtitle="Works" url="/works">
+				<div class="w-[50%] h-[25%] right-0"></div>
+				<div
+					class="w-[50%] h-[50%] top-[25%] right-0 rounded-r-[100%] group-hover:rounded-r-none"
+				>
+				</div>
+				<div class="w-[50%] h-full group-hover:w-full"></div>
+			</LandingLink>
+			<LandingLink subtitle="About" url="/about">
+				<div class="w-full h-[25%] group-hover:h-[50%]"></div>
+				<div
+					class="w-[50%] h-full left-[25%] group-hover:left-0 group-hover:w-full"
+				>
+				</div>
+				<div class="w-full h-[25%] bottom-0 group-hover:h-[50%]"></div>
+			</LandingLink>
+			<LandingLink subtitle="Blog" url="/blog">
+				<div
+					class="w-full h-[50%] rounded-r-[50%] group-hover:rounded-r-none"
+				>
+				</div>
+				<div
+					class="w-full h-[50%] bottom-0 rounded-tr-[50%] group-hover:rounded-tr-none"
+				>
+				</div>
+			</LandingLink>
+			<LandingLink subtitle="Photos" url="/photos">
+				<div class="w-full h-[25%]"></div>
+				<div
+					class="w-full h-[50%] top-[25%] rounded-r-[100%] group-hover:rounded-r-none"
+				>
+				</div>
+				<div class="w-[50%] h-full"></div>
+				<div class="w-full h-[25%] bottom-0"></div>
+			</LandingLink>
 		</div>
-		<div>
-			<h2 class="pt-8 subtitle">Find Me At</h2>
-		</div>
-		<a class="absolute bottom-0 right-0 subtitle" href="google.com"
-			>Art by CreepyRafa_rayitno</a
+		<a
+			href="https://google.com/"
+			class="flex flex-col items-center gap-4 group"
 		>
-	</article>
-	<h2 class="font-display text-2xl">Portfolio</h2>
-	<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
-		{allWorks.map((work) => <WorkCard {work} />)}
+			<img
+				src={FullBody.src}
+				alt="Fire's avatar, depicting a floating woman with trailing hair."
+			/>
+			<span class="opacity-15 group-hover:opacity-30 transition-opacity">
+				Art by CreepyRafa_rayitno
+			</span>
+		</a>
 	</div>
 </Layout>
-
-<style>
-	.fullbody {
-		shape-outside: url("../assets/fullbody.png");
-		shape-margin: 4rem;
-	}
-</style>

@@ -1,0 +1,10 @@
+---
+const { letter, subtitle, url } = Astro.props;
+---
+
+<a href={url} class="h-full text-center w-96 landing-link relative">
+    <div class="*:transition-all *:bg-red-100 group *:absolute">
+        <slot />
+    </div>
+    <h2 class="text-xl font-light">{subtitle}</h2>
+</a>
