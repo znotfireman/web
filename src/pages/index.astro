@@ -1,63 +1,37 @@
 ---
 import { Image } from "astro:assets";
 import LandingLink from "../layouts/LandingLink.astro";
-import Layout from "../layouts/Layout.astro";
+import Document from "../layouts/Document.astro";
 import FullBody from "../assets/fullbody.png";
+import Header from "../layouts/Header.astro";
+
+const ROLES = [
+	"Roblox Game Developer",
+	"Full-Stack Engineer",
+	"Graphic Designer",
+];
 ---
 
-<Layout>
-	<div
-		class="w-full h-full overflow-hidden flex items-center justify-center gap-4"
+<Document>
+	<main
+		class="w-full py-32 px-8 min-h-full flex flex-col items-center gap-12 text-balance text-center"
 	>
-		<div class="grid grid-cols-4 h-full gap-2">
-			<!-- An IQ Too High? -->
-			<LandingLink subtitle="Works" url="/works">
-				<div class="w-[50%] h-[25%] right-0"></div>
-				<div
-					class="w-[50%] h-[50%] top-[25%] right-0 rounded-r-[100%] group-hover:rounded-r-none"
-				>
-				</div>
-				<div class="w-[50%] h-full group-hover:w-full"></div>
-			</LandingLink>
-			<LandingLink subtitle="About" url="/about">
-				<div class="w-full h-[25%] group-hover:h-[50%]"></div>
-				<div
-					class="w-[50%] h-full left-[25%] group-hover:left-0 group-hover:w-full"
-				>
-				</div>
-				<div class="w-full h-[25%] bottom-0 group-hover:h-[50%]"></div>
-			</LandingLink>
-			<LandingLink subtitle="Blog" url="/blog">
-				<div
-					class="w-full h-[50%] rounded-r-[50%] group-hover:rounded-r-none"
-				>
-				</div>
-				<div
-					class="w-full h-[50%] bottom-0 rounded-tr-[50%] group-hover:rounded-tr-none"
-				>
-				</div>
-			</LandingLink>
-			<LandingLink subtitle="Photos" url="/photos">
-				<div class="w-full h-[25%]"></div>
-				<div
-					class="w-full h-[50%] top-[25%] rounded-r-[100%] group-hover:rounded-r-none"
-				>
-				</div>
-				<div class="w-[50%] h-full"></div>
-				<div class="w-full h-[25%] bottom-0"></div>
-			</LandingLink>
+		<Header />
+		<div class="grid sm:grid-cols-4 gap-2 w-full max-w-6xl">
+			<LandingLink letter="F" subtitle="Works" url="/works" />
+			<LandingLink letter="I" subtitle="About" url="/about" />
+			<LandingLink letter="R" subtitle="Blog" url="/blog" />
+			<LandingLink letter="E" subtitle="Photos" url="/photos" />
 		</div>
-		<a
-			href="https://google.com/"
-			class="flex flex-col items-center gap-4 group"
-		>
-			<img
-				src={FullBody.src}
-				alt="Fire's avatar, depicting a floating woman with trailing hair."
-			/>
-			<span class="opacity-15 group-hover:opacity-30 transition-opacity">
-				Art by CreepyRafa_rayitno
-			</span>
-		</a>
-	</div>
-</Layout>
+		<span>{ROLES.join(" ✽ ")}</span>
+		<footer class="*:subtitle text-sm *:opacity-15">
+			<p>Copyright 2026 godmothersfire</p>
+			<a
+				class="hover:opacity-30 active:opacity-30 transition-opacity"
+				href="https://google.com/"
+			>
+				Artwork by CreepyRafa_rayitno
+			</a>
+		</footer>
+	</main>
+</Document>

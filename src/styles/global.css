@@ -16,12 +16,37 @@
     --font-mono: 'Lilex Variable', monospace;
 }
 
-@layer theme {
+@layer base {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-display mt-4 text-3xl;
+    }
+
+    h1 {
+        @apply font-bold;
+    }
+
+    h1,
+    h2 {
+        @apply text-4xl;
+    }
+
     body {
-        @apply font-mono;
+        @apply font-mono text-pink-950 bg-pink-50 text-2xl font-light;
     }
 
     .subtitle {
-        @apply text-sm font-display opacity-50;
+        @apply text-sm font-display opacity-30;
+    }
+}
+
+@layer utilities {
+    .contents-vertical {
+        @apply flex flex-col gap-4;
     }
 }

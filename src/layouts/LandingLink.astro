@@ -2,9 +2,12 @@
 const { letter, subtitle, url } = Astro.props;
 ---
 
-<a href={url} class="h-full text-center w-96 landing-link relative">
-    <div class="*:transition-all *:bg-red-100 group *:absolute">
-        <slot />
-    </div>
-    <h2 class="text-xl font-light">{subtitle}</h2>
+<a
+    href={url}
+    class="flex flex-col-reverse gap-2 h-full text-center items-center landing-link group"
+>
+    <h2 class="font-light font-mono">{subtitle}</h2>
+    <span class="font-display text-9xl relative group-hover:font-bold"
+        >{letter}</span
+    >
 </a>
