@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: Basteleur;
+    font-weight: bold;
+    src: url(../assets/fonts/Basteleur-Bold.otf) format("opentype"), url(../assets/fonts/Basteleur-Bold.ttf) format("truetype"), url(../assets/fonts/Basteleur-Bold.woff2) format("woff2"), url(../assets/fonts/Basteleur-Bold.woff) format("woff");
+}
+
+@font-face {
+    font-family: Basteleur;
+    src: url(../assets/fonts/Basteleur-Moonlight.otf) format("opentype"), url(../assets/fonts/Basteleur-Moonlight.ttf) format("truetype"), url(../assets/fonts/Basteleur-Moonlight.woff2) format("woff2"), url(../assets/fonts/Basteleur-Moonlight.woff) format("woff");
+}
+
+@theme {
+    --font-display: "Basteleur", "sans-serif";
+    --font-mono: 'Lilex Variable', monospace;
+}
+
+@layer theme {
+    body {
+        @apply font-mono;
+    }
+
+    .subtitle {
+        @apply text-sm font-display opacity-50;
+    }
+}

@@ -1,11 +1,55 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import FullBody from "../assets/fullbody.png";
+import { getCollection } from "astro:content";
+import WorkCard from "../components/WorkCard.astro";
+import { Image } from "astro:assets";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const allWorks = (await getCollection("works")).sort((a, b) =>
+	a.data.title.localeCompare(b.data.title),
+);
 ---
 
 <Layout>
-	<Welcome />
+	<article class="relative pt-4">
+		<img
+			src={FullBody.src}
+			alt="Avatar of godmothersfire on Roblox, depicts a floating woman with trailing crimson hair."
+			class="fullbody w-full lg:max-w-3xl h-full lg:float-right lg:pl-8 relative"
+		/>
+		<h1 class="text-4xl pb-4 font-display font-bold lg:mt-0 mt-4">
+			Full-Stack<br />Game Developer
+		</h1>
+		<p class="lg:max-w-[60ch]">
+			For over 6 years, I scripted, built maps, and developed many Roblox
+			games. I also work across frontend to backend, for competitive
+			robotics to open source libraries.
+			<br />
+			<br />
+			I love leaving players amazed with the attention to details that make
+			worlds feel alive. To date, my work has been enjoyed by thousands of players
+			worldwide.
+		</p>
+		<div>
+			<h2 class="pt-8 subtitle">Technologies I Use</h2>
+		</div>
+		<div>
+			<h2 class="pt-8 subtitle">Find Me At</h2>
+		</div>
+		<a class="absolute bottom-0 right-0 subtitle" href="google.com"
+			>Art by CreepyRafa_rayitno</a
+		>
+	</article>
+	<h2 class="font-display text-2xl">Portfolio</h2>
+	<div class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+		{allWorks.map((work) => <WorkCard {work} />)}
+	</div>
 </Layout>
+
+<style>
+	.fullbody {
+		shape-outside: url("../assets/fullbody.png");
+		shape-margin: 4rem;
+	}
+</style>

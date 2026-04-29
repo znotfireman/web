@@ -1,0 +1,66 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { InferEntrySchema } from "astro:content";
+
+const { id, data } = Astro.props.work as CollectionEntry<"works">;
+let { title, tags, summary } = data;
+
+tags = tags.slice(0, 3);
+
+// FIXME: this omega stupid but it works!!
+const { default: imageUrl } = await import(`../assets/works/${id}.png?url`);
+---
+
+<a
+    class="aspect-square relative flex flex-col items-center justify-center gap-2 p-4 text-center work-card"
+    href={`/works/${id}`}
+>
+    <img src={imageUrl} alt={title} class="logo transition-all" />
+    <h2 class="font-display text-sm">{title}</h2>
+    <div class="flex gap-1">
+        {
+            tags.map((tag) => (
+                <span class="text-xs rounded-lg py-1 px-2 bg-gray-100">
+                    {tag}
+                </span>
+            ))
+        }
+    </div>
+    <div class="flex flex-col">
+        {summary.map((s) => <p class="text-xs">{s}</p>)}
+    </div>
+
+    <style>
+        .work-card {
+            --logo-goal-height: 6rem;
+            --logo-goal-margin: 0.5rem;
+
+            --border-width: 0.5rem;
+        }
+
+        .work-card::before {
+            display: block;
+            content: "";
+
+            position: absolute;
+            width: calc(100% + var(--border-width));
+            height: calc(100% + var(--border-width));
+            left: calc(-1 * var(--border-width));
+            bottom: calc(-1 * var(--border-width));
+            border: var(--border-width) solid black;
+            border-image: url("../assets/card-border.png") 40;
+        }
+
+        .work-card .logo {
+            height: calc(var(--logo-goal-height) - var(--logo-goal-margin));
+            margin-top: var(--logo-goal-margin);
+            filter: saturate(0%) brightness(80%);
+        }
+
+        .work-card:hover .logo {
+            height: var(--logo-goal-height);
+            margin-top: 0;
+            filter: saturate(100%) brightness(100%);
+        }
+    </style>
+</a>
