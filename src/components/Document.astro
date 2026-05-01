@@ -2,6 +2,8 @@
 import "@fontsource-variable/lilex/wght.css";
 import "../styles/global.css";
 import { ClientRouter } from "astro:transitions";
+
+const { title = "godmothersfire" } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,7 +17,7 @@ import { ClientRouter } from "astro:transitions";
             name="theme-color"
             content="#FFEEEE"
         />
-        <title>godmothersfire</title>
+        <title>{title}</title>
         <ClientRouter />
     </head>
     <body>

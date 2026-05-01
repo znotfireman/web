@@ -2,9 +2,11 @@
 import Document from "./Document.astro";
 import Footer from "./Footer.astro";
 import Header from "./Header.astro";
+
+const { title } = Astro.props;
 ---
 
-<Document>
+<Document {title}>
 	<div class="w-full py-32 px-16 max-w-6xl mx-auto contents-vertical">
 		<Header />
 		<slot />
