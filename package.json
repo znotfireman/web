@@ -15,6 +15,12 @@
     "@fontsource-variable/lilex": "^5.2.1",
     "@tailwindcss/vite": "^4.2.4",
     "astro": "^6.1.10",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.2.4"
+  },
+  "devDependencies": {
+    "@iconify-json/akar-icons": "^1.2.7",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/simple-icons": "^1.2.80"
   }
 }

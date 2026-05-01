@@ -1,0 +1,30 @@
+---
+import { Links } from "../constants";
+import IconLink from "./IconLink.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="*:subtitle text-sm text-center flex flex-col items-center">
+    <nav
+        class="flex *:text-3xl mb-4 has-hover:*:opacity-30 *:hover:opacity-100! *:transition-opacity *:px-2.5 mt-12"
+    >
+        <IconLink
+            icon="simple-icons:pronounsdotpage"
+            url={Links.FIRE_PRONOUNS}
+        />
+        <IconLink icon="simple-icons:instagram" url={Links.FIRE_INSTAGRAM} />
+        <IconLink icon="simple-icons:github" url={Links.FIRE_GITHUB} />
+        <IconLink icon="simple-icons:roblox" url={Links.FIRE_ROBLOX} />
+        <IconLink icon="luduvo" url={Links.FIRE_LUDUVO} />
+        <IconLink icon="simple-icons:youtube" url={Links.FIRE_YOUTUBE} />
+        <IconLink icon="simple-icons:bluesky" url={Links.FIRE_BLUESKY} />
+        <IconLink icon="simple-icons:twitter" url={Links.FIRE_TWITTER} />
+        <IconLink icon="mdi:envelope" url={Links.FIRE_MAILTO} />
+    </nav>
+    <p class="inline-flex items-center align-bottom gap-2 opacity-40">
+        (c) {new Date().getFullYear()} Made with &lt;3 by godmothersfire
+    </p>
+    <a class="link opacity-40" href={Links.CREEPY_INSTAGRAM}>
+        Header artwork by artsycreepy
+    </a>
+</footer>

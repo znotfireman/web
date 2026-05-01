@@ -16,6 +16,10 @@ import { ClientRouter } from "astro:transitions";
         <ClientRouter />
     </head>
     <body>
+        <div
+            class="-z-10 bg-radial to-background-light from-background-dark w-screen h-screen fixed left-0 top-0"
+        >
+        </div>
         <slot />
     </body>
 </html>
