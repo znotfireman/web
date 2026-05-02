@@ -8,9 +8,8 @@ export namespace LinkConstants {
 	export const FIRE_BLUESKY = "https://bsky.app/profile/godmothersfire.bsky.social";
 	export const FIRE_TWITTER = "https://x.com/godmothersfire";
 	export const FIRE_DISCORD = "https://discord.com/users/872485645774360637";
+	export const FIRE_TIME_IS = "https://time.is/Ho_Chi_Minh_City";
 	export const FIRE_MAILTO = "mailto:znotfireman@gmail.com";
 
 	export const CREEPY_INSTAGRAM = "https://www.instagram.com/artsycreepy/";
-
-	export const TIME_IS_HCM = "https://time.is/Ho_Chi_Minh_City";
 }

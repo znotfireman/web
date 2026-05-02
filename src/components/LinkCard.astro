@@ -12,11 +12,10 @@ function lastOfUrl(url: string) {
 <a
 	href={url}
 	aria-labelledby={title}
-	class="bg-background-dark group hover:*:text-background-dark relative flex flex-wrap items-center gap-3 overflow-clip p-2 px-4 *:z-20 *:transition-all *:duration-200"
+	class="bg-background-dark group hover:*:text-background-dark active:*:text-background-dark relative flex flex-wrap items-center gap-3 overflow-clip p-2 px-4 *:z-20 *:transition-all *:duration-200"
 >
-	<!-- <div class="absolute left-0 z-10 h-full w-0 bg-pink-900 group-hover:w-full"></div> -->
 	<div
-		class="absolute left-0 z-10 h-0 w-full bg-pink-900 opacity-0 duration-500 group-hover:h-full group-hover:opacity-100"
+		class="absolute bottom-0 left-0 z-10 h-0 w-full bg-pink-900 opacity-0 duration-500 group-hover:h-full group-hover:opacity-100 group-active:h-full group-active:opacity-100"
 	>
 	</div>
 	<Icon name={icon} />
