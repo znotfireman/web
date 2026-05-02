@@ -1,11 +1,20 @@
 ---
 import FullBody from "../assets/fullbodysd.png";
+
+const { isHome } = Astro.props;
 ---
 
-<a href="/">
-    <img
-        src={FullBody.src}
-        alt="Fire's avatar, depicting a floating woman with trailing hair."
-        class="max-w-full max-h-[50vh] lg:h-100 rotate-180 -mb-1 mx-auto saturate-85"
-    />
+<a href="/" aria-labelledby="Return Home" class="group relative">
+	<img
+		src={FullBody.src}
+		alt="Fire's avatar, depicting a floating woman with trailing hair."
+		class="mx-auto mt-32 max-h-[50vh] max-w-full rotate-180 saturate-80 lg:h-100"
+	/>
+	{
+		!isHome && (
+			<span class="absolute -bottom-4 left-[50%] z-10 translate-x-[-50%] text-sm opacity-10 transition-opacity group-hover:opacity-40">
+				Click to Return Home
+			</span>
+		)
+	}
 </a>

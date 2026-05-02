@@ -1,66 +1,72 @@
 @import "tailwindcss";
 
 @font-face {
-    font-family: Basteleur;
-    font-weight: bold;
-    src: url(../assets/fonts/Basteleur-Bold.otf) format("opentype"), url(../assets/fonts/Basteleur-Bold.ttf) format("truetype"), url(../assets/fonts/Basteleur-Bold.woff2) format("woff2"), url(../assets/fonts/Basteleur-Bold.woff) format("woff");
+	font-family: Basteleur;
+	font-weight: bold;
+	src:
+		url(../assets/fonts/Basteleur-Bold.otf) format("opentype"),
+		url(../assets/fonts/Basteleur-Bold.ttf) format("truetype"),
+		url(../assets/fonts/Basteleur-Bold.woff2) format("woff2"),
+		url(../assets/fonts/Basteleur-Bold.woff) format("woff");
 }
 
 @font-face {
-    font-family: Basteleur;
-    src: url(../assets/fonts/Basteleur-Moonlight.otf) format("opentype"), url(../assets/fonts/Basteleur-Moonlight.ttf) format("truetype"), url(../assets/fonts/Basteleur-Moonlight.woff2) format("woff2"), url(../assets/fonts/Basteleur-Moonlight.woff) format("woff");
+	font-family: Basteleur;
+	src:
+		url(../assets/fonts/Basteleur-Moonlight.otf) format("opentype"),
+		url(../assets/fonts/Basteleur-Moonlight.ttf) format("truetype"),
+		url(../assets/fonts/Basteleur-Moonlight.woff2) format("woff2"),
+		url(../assets/fonts/Basteleur-Moonlight.woff) format("woff");
 }
 
 @theme {
-    --font-display: "Basteleur", "sans-serif";
-    --font-mono: 'Lilex Variable', monospace;
+	--font-display: "Basteleur", "sans-serif";
+	--font-mono: "Lilex Variable", monospace;
 
-    --color-background-light: #FFEEEE;
-    --color-background-dark: #FFEAEA;
+	--color-background-light: #ffeeee;
+	--color-background-dark: #ffeaea;
 }
 
 @layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-display mt-4 text-3xl leading-12 text-balance not-first:mt-12;
+	}
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @apply font-display mt-4 text-3xl leading-7 not-first:mt-12;
-    }
+	h1 {
+		@apply font-bold;
+	}
 
+	h1,
+	h2 {
+		@apply text-4xl;
+	}
 
-    h1 {
-        @apply font-bold;
-    }
-
-    h1,
-    h2 {
-        @apply text-4xl;
-    }
-
-    body {
-        @apply font-mono text-pink-900 text-2xl font-light leading-9 bg-background-light;
-    }
+	body {
+		@apply bg-background-light font-mono text-2xl leading-9 font-light text-pink-900;
+	}
 }
 
 @layer utilities {
-    .contents-vertical {
-        @apply flex flex-col gap-4;
-    }
+	.contents-vertical {
+		@apply flex flex-col gap-4;
+	}
 
-    .subtitle {
-        @apply text-sm font-display opacity-30;
-    }
+	.subtitle {
+		@apply font-display text-sm opacity-30;
+	}
 
-    .link {
-        @apply transition-all;
-        box-shadow: inset 0 -0.1rem 0 color-mix(in srgb, var(--color-pink-900) 20%, transparent);
-    }
+	.link {
+		@apply transition-all;
+		box-shadow: inset 0 -0.1rem 0 color-mix(in srgb, var(--color-pink-900) 20%, transparent);
+	}
 
-    .link:hover {
-        color: var(--color-background-dark);
-        box-shadow: inset 0 -2rem 0 var(--color-pink-900);
-    }
+	.link:hover {
+		color: var(--color-background-dark);
+		box-shadow: inset 0 -2rem 0 var(--color-pink-900);
+	}
 }

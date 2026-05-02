@@ -3,11 +3,11 @@ import Document from "./Document.astro";
 import Footer from "./Footer.astro";
 import Header from "./Header.astro";
 
-const { title } = Astro.props;
+const { pageTitle } = Astro.props;
 ---
 
-<Document {title}>
-	<div class="w-full py-32 px-16 max-w-6xl mx-auto contents-vertical">
+<Document {pageTitle}>
+	<div class="contents-vertical mx-auto w-full max-w-6xl p-4">
 		<Header />
 		<slot />
 		<Footer />

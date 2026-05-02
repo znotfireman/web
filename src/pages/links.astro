@@ -1,0 +1,34 @@
+---
+import { LinkConstants } from "../constants";
+import Layout from "../components/Layout.astro";
+import LinkCard from "../components/LinkCard.astro";
+import LinkContainer from "../components/LinkContainer.astro";
+---
+
+<Layout pageTitle="Links">
+	<h1>Links</h1>
+	<p><i>Please note I'm moving my handles from znotfireman to godmothersfire!</i></p>
+
+	<h2>Work</h2>
+	<LinkContainer>
+		<LinkCard title="Email" url={LinkConstants.FIRE_MAILTO} icon="mdi:envelope" preview="znotfireman@gmail.com" />
+		<LinkCard title="GitHub" url={LinkConstants.FIRE_GITHUB} icon="simple-icons:github" />
+	</LinkContainer>
+
+	<h2>UGC Platforms</h2>
+	<LinkContainer>
+		<LinkCard title="Roblox" url={LinkConstants.FIRE_ROBLOX} icon="simple-icons:roblox" preview="znotfireman" />
+		<LinkCard title="Luduvo" url={LinkConstants.FIRE_LUDUVO} icon="luduvo" preview="godmothersfire" />
+		<LinkCard title="Polytoria" url={LinkConstants.FIRE_LUDUVO} icon="luduvo" preview="znotfireman" />
+	</LinkContainer>
+
+	<h2>Socials</h2>
+	<LinkContainer>
+		<LinkCard title="Pronouns.page" url={LinkConstants.FIRE_PRONOUNS} icon="simple-icons:pronounsdotpage" />
+		<LinkCard title="Instagram" url={LinkConstants.FIRE_INSTAGRAM} icon="simple-icons:instagram" />
+		<LinkCard title="Discord" url={LinkConstants.FIRE_DISCORD} icon="simple-icons:discord" preview="znotfireman" />
+		<LinkCard title="YouTube" url={LinkConstants.FIRE_YOUTUBE} icon="simple-icons:youtube" />
+		<LinkCard title="Bluesky" url={LinkConstants.FIRE_BLUESKY} icon="simple-icons:bluesky" />
+		<LinkCard title="Twitter" url={LinkConstants.FIRE_TWITTER} icon="simple-icons:twitter" />
+	</LinkContainer>
+</Layout>

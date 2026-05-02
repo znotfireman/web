@@ -1,26 +1,30 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@fontsource-variable/lilex": "^5.2.1",
-    "@tailwindcss/vite": "^4.2.4",
-    "astro": "^6.1.10",
-    "astro-icon": "^1.1.5",
-    "tailwindcss": "^4.2.4"
-  },
-  "devDependencies": {
-    "@iconify-json/akar-icons": "^1.2.7",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/simple-icons": "^1.2.80"
-  }
+	"name": "godmothersfire.com",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"engines": {
+		"node": ">=22.12.0"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@fontsource-variable/lilex": "^5.2.1",
+		"@tailwindcss/vite": "^4.2.4",
+		"astro": "^6.1.10",
+		"astro-icon": "^1.1.5",
+		"prettier-plugin-astro": "^0.14.1",
+		"tailwindcss": "^4.2.4"
+	},
+	"devDependencies": {
+		"@iconify-json/akar-icons": "^1.2.7",
+		"@iconify-json/mdi": "^1.2.3",
+		"@iconify-json/simple-icons": "^1.2.80",
+		"prettier": "^3.8.3",
+		"prettier-plugin-tailwindcss": "^0.8.0"
+	}
 }

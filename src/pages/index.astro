@@ -6,25 +6,19 @@ import FullBody from "../assets/fullbody.png";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const ROLES = [
-	"Roblox Game Developer",
-	"Full-Stack Engineer",
-	"Graphic Designer",
-];
+const ROLES = ["Roblox Game Developer", "Full-Stack Engineer", "Graphic Designer"];
 ---
 
 <Document>
-	<main
-		class="w-full py-32 px-8 min-h-full flex flex-col items-center gap-12 text-balance text-center"
-	>
-		<Header />
-		<div class="grid sm:grid-cols-4 gap-8 w-full max-w-6xl">
+	<main class="flex min-h-full w-full flex-col items-center gap-12 p-4 text-center text-balance">
+		<Header isHome />
+		<div class="grid w-full max-w-6xl gap-8 sm:grid-cols-4">
 			<LandingLink letter="F" subtitle="Works" url="/works" />
 			<LandingLink letter="I" subtitle="About" url="/about" />
 			<LandingLink letter="R" subtitle="Blog" url="/blog" />
-			<LandingLink letter="E" subtitle="Photos" url="/photos" />
+			<LandingLink letter="E" subtitle="Links" url="/links" />
 		</div>
-		<span class="-mb-12">{ROLES.join(" ✤ ")}</span>
+		<p>{ROLES.join(" ⋅ ")}</p>
 		<Footer />
 	</main>
 </Document>
